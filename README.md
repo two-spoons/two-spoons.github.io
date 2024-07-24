@@ -1,5 +1,18 @@
-# al-folio
+# readme
 
+<div align="center">
+<br><br>
+Speaking
+<br><br>
+Building
+<br><br>
+Writing
+<br><br>
+Reading
+<br><br>
+Building
+
+<!--
 <div align="center">
 
 [![Preview](readme_preview/al-folio-preview.png)](https://alshedivat.github.io/al-folio/)
@@ -348,6 +361,7 @@ You may also use the following codes for displaying this in any other pages.
 
 ```html
 <!-- code for GitHub users -->
+<!--
 {% if site.data.repositories.github_users %}
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for user in site.data.repositories.github_users %} {% include repository/repo_user.liquid username=user %} {% endfor %}
@@ -355,6 +369,7 @@ You may also use the following codes for displaying this in any other pages.
 {% endif %}
 
 <!-- code for GitHub trophies -->
+<!--
 {% if site.repo_trophies.enabled %} {% for user in site.data.repositories.github_users %} {% if site.data.repositories.github_users.size > 1 %}
 <h4>{{ user }}</h4>
 {% endif %}
@@ -364,6 +379,7 @@ You may also use the following codes for displaying this in any other pages.
 {% endfor %} {% endif %}
 
 <!-- code for GitHub repositories -->
+<!--
 {% if site.data.repositories.github_repos %}
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for repo in site.data.repositories.github_repos %} {% include repository/repo.liquid repository=repo %} {% endfor %}
@@ -371,7 +387,8 @@ You may also use the following codes for displaying this in any other pages.
 {% endif %}
 ```
 
----
+# THIS IS A COMMENT
+<!--
 
 #### Theming
 
@@ -426,6 +443,7 @@ Our most active contributors are welcome to join the maintainers team. If you ar
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<!--
 <table>
   <tbody>
     <tr>
@@ -441,7 +459,7 @@ Our most active contributors are welcome to join the maintainers team. If you ar
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
+<!--
 ### All Contributors
 
 <a href="https://contrib.rocks">
@@ -463,3 +481,4 @@ Our most active contributors are welcome to join the maintainers team. If you ar
 The theme is available as open source under the terms of the [MIT License](https://github.com/alshedivat/al-folio/blob/master/LICENSE).
 
 Originally, **al-folio** was based on the [\*folio theme](https://github.com/bogoli/-folio) (published by [Lia Bogoev](https://liabogoev.com) and under the MIT license). Since then, it got a full re-write of the styles and many additional cool features.
+
