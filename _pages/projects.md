@@ -1,14 +1,15 @@
 ---
 layout: page
-title: projects
+title: speaking
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: i like talking to my friends about video games. primarily the thoughts and feelings that shape their experiences of them.
 nav: true
-nav_order: 3
+nav_order: 2
 display_categories: [work, fun]
 horizontal: false
 ---
 
+{%comment%}
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
@@ -63,3 +64,4 @@ horizontal: false
   {% endif %}
 {% endif %}
 </div>
+{%endcomment%}

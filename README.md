@@ -1,14 +1,11 @@
-<div align="center">
-<h1>a place for my<h1>
+# a place for my
 <div align="left">
 <br>
-Writing
+writing
 <br><br>
-Speaking
+speaking
 <br><br>
-Reading
-<br><br>
-Building
+coding
 
 <!--
 <div align="center">

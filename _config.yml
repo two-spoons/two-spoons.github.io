@@ -51,7 +51,7 @@ navbar_fixed: true
 footer_fixed: true
 search_enabled: true
 socials_in_search: true
-bib_search: true
+bib_search: false
 
 # Dimensions
 max_width: 930px
@@ -112,7 +112,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
 contact_note: >
-  head to the discord. send me an email.
+  send me an email. github's empty. twitter's dead. head to the discord. 
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -132,10 +132,10 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: rumination # blog_name will be displayed in your blog page
-blog_description: sequenced storage
+blog_name: thoughts # blog_name will be displayed in your blog page
+blog_description: often an idea fascinates
 permalink: /blog/:year/:title/
-lsi: false # produce an index for related posts
+lsi: true # produce an index for related posts
 
 # Pagination
 pagination:
@@ -243,6 +243,12 @@ exclude:
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
+  - _pages/cv.md
+  - _pages/teaching.md
+  - _pages/people.md
+  - _pages/dropdown.md
+  - _pages/profiles.md
+  - _pages/publications.md
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -304,8 +310,8 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: ["games", "math", "code", "philosophy"] # these tags will be displayed on the front page of your blog
+display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
