@@ -1,15 +1,12 @@
-# readme
 <div align="center">
-<h1>a place to save<h1>
-<div align="center">
+<h1>a place for my<h1>
+<div align="left">
 <br>
 Writing
 <br><br>
 Speaking
 <br><br>
 Reading
-<br><br>
-Playing
 <br><br>
 Building
 
