@@ -24,7 +24,7 @@ $yellow-color: #efcc00 !default;
 
 $grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark: #1c1c1d;
+$grey-color-dark: #000000;
 $grey-900: #212529;
 
 $white-color: #ffffff !default;
@@ -33,11 +33,10 @@ $black-color: #000000 !default;
 // Theme colors
 
 $code-bg-color-light: rgba($purple-color, 0.05);
-$code-bg-color-dark: #2c3237 !default;
+$code-bg-color-dark: #131414 !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";
-
 // Tabler icons location
 $ti-font-path: "../fonts";
 
