@@ -1,11 +1,11 @@
-# a place for my
+# fold in space
 <div align="left">
 <br>
-writing
-<br><br>
-speaking
+casting
 <br><br>
 coding
+<br><br>
+selling out
 
 <!--
 <div align="center">
