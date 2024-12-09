@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /repositories/
+permalink: /coding/
 title: coding
 description: i put some code together
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 ## GitHub users

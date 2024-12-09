@@ -1,10 +1,10 @@
 ---
 layout: page
 title: casting
-permalink: /projects/
+permalink: /casting/
 description: i like talking to my friends about video games. primarily the thoughts and feelings that shape their experiences of them.
 nav: true
-nav_order: 1
+nav_order: 2
 display_categories: [work, fun]
 horizontal: false
 ---
