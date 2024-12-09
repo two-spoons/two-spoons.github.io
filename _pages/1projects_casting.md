@@ -2,12 +2,15 @@
 layout: page
 title: casting
 permalink: /casting/
-description: i like talking to my friends about video games. primarily the thoughts and feelings that shape their experiences of them.
+description: i like talking to my friends about video games. i like talking to video games about video games. i like sighing into the abyss with a video game for company.
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [work, fun, nonsense]
 horizontal: false
 ---
+Twitch<https://www.twitch.tv/twospoonstv>
+
+Discord<https://discord.gg/YJrpQD2T>
 
 {%comment%}
 <!-- pages/projects.md -->
