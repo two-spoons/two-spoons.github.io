@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-ive started this site. it has no content.
+ive started this site. it has no content. it soon will.

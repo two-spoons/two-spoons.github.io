@@ -1,12 +1,11 @@
 # fold in space
 <div align="left">
-
-<br><br>
-writing
 <br>
 casting
 <br><br>
 coding
+<br><br>
+selling out
 
 <!--
 <div align="center">
