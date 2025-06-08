@@ -68,6 +68,8 @@ GEM
     jekyll-get-json (1.0.0)
       deep_merge (~> 1.2)
       jekyll (>= 3.0)
+    jekyll-imagemagick (1.4.0)
+      jekyll (>= 3.4)
     jekyll-link-attributes (1.0.1)
     jekyll-paginate-v2 (3.0.0)
       jekyll (>= 3.0, < 5.0)
@@ -146,6 +148,7 @@ DEPENDENCIES
   jekyll-email-protect
   jekyll-feed
   jekyll-get-json
+  jekyll-imagemagick
   jekyll-link-attributes
   jekyll-paginate-v2
   jekyll-regex-replace
