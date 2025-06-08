@@ -65,6 +65,8 @@ jobs:
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
+      - name: Install Imagemagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
       - name: Checkout 🛎️
         uses: actions/checkout@v4
       - name: Setup Ruby
@@ -93,3 +95,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+          
