@@ -8,11 +8,13 @@ nav_order: 2
 display_categories: [work, fun, nonsense]
 horizontal: false
 ---
+
 Twitch<https://www.twitch.tv/twospoonstv>
 
 Discord<https://discord.gg/YJrpQD2T>
 
 {%comment%}
+
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
