@@ -242,6 +242,7 @@ exclude:
   - _pages/about_einstein.md
   - _posts/
   - _projects/
+  - assets/jupyter/
   - _pages/cv.md
   - _pages/teaching.md
   - _pages/people.md
@@ -264,9 +265,12 @@ plugins:
   - jekyll-feed
   - jekyll-get-json
   - jekyll-imagemagick
+  - jekyll-jupyter-notebook
   - jekyll-link-attributes
+  - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll-regex-replace
+  - jekyll-scholar
   - jekyll-sitemap
   - jekyll-tabs
   - jekyll-toc
