@@ -2,6 +2,11 @@
  * Content
  ******************************************************************************/
 
+@use "variables" as *;
+
+// Configuration
+$max-content-width: 800px !default;
+
 body {
   padding-bottom: 70px;
   color: var(--global-text-color);
