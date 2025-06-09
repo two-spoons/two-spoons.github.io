@@ -27,6 +27,7 @@ jobs:
         with:
           ruby-version: '3.1'
           bundler-cache: true
+          cache-version: 0
 
       - name: Setup Pages
         id: pages
@@ -36,6 +37,7 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

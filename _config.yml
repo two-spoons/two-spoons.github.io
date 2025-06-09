@@ -1,7 +1,7 @@
 # Site settings
 title: two_spoons_online
 description: welcome to two_spoons_online! here you'll find articles about writing, casting, and coding.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/two_spoons_online" # the subpath of your site, e.g. /blog
 url: "https://twobloodyspoons.github.io" # the base hostname & protocol for your site
 
 # Build settings
@@ -20,6 +20,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-github-metadata
 
 # Exclude files from processing
 exclude:
@@ -30,18 +31,11 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - manage.py
-  - requirements.txt
-  - blog/
-  - blog_site/
-  - Dockerfile*
-  - docker-compose.yml
-  - venv/
-  - db.sqlite3
-  - *.py
-  - create_categories.py
-  - setup_local.sh
-  - run_local.sh
+  - "*.gemspec"
+  - "*.gem"
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
 
 # Front Matter Defaults
 defaults:
@@ -64,3 +58,6 @@ categories:
 # Site configuration
 timezone: UTC
 encoding: "utf-8"
+
+# GitHub Pages / GitHub Actions compatibility
+github: [metadata]
