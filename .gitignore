@@ -1,46 +1,13 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
-# Django
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-/static/
-/media/
-staticfiles/
-
-# Environment variables
-.env
-.env.local
-.env.production
-
-# Virtual environments
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
+# Ruby
+.bundle/
+vendor/
+Gemfile.lock
 
 # IDE
 .vscode/
@@ -57,3 +24,6 @@ venv.bak/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Local development
+.env

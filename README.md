@@ -1,6 +1,6 @@
 # two_spoons_online
 
-A Django blog application with categories for Writing, Casting, and Coding, featuring a Dracula theme and Input Mono font.
+A Jekyll blog with categories for Writing, Casting, and Coding, featuring a Dracula theme and Input Mono font.
 
 ## Features
 
@@ -8,119 +8,117 @@ A Django blog application with categories for Writing, Casting, and Coding, feat
 - **Theme**: Dracula color scheme with lowercase text
 - **Font**: Input Mono monospaced font
 - **Responsive**: Bootstrap-based responsive design
-- **Admin**: Django admin interface for content management
+- **Static Site**: Jekyll-powered for fast performance
+- **GitHub Pages**: Automatic deployment via GitHub Actions
 
 ## Development
 
 ### Prerequisites
 
-- Python 3.11+
-- pip
+- Ruby 3.1+
+- Bundler
 
 ### Local Setup
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd twospoonsanewhope
-   ```
-
-2. Run the setup script:
-   ```bash
-   ./setup_local.sh
-   ```
-
-3. Start the development server:
-   ```bash
-   ./run_local.sh
-   ```
-
-4. Visit http://127.0.0.1:8000
-
-### Manual Setup
-
-1. Create virtual environment:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+   git clone https://github.com/TwoBloodySpoons/two_spoons_online.git
+   cd two_spoons_online
    ```
 
 2. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   bundle install
    ```
 
-3. Run migrations:
+3. Start the development server:
    ```bash
-   python manage.py migrate
-   python manage.py makemigrations blog
-   python manage.py migrate
+   bundle exec jekyll serve
    ```
 
-4. Create categories:
-   ```bash
-   python create_categories.py
-   ```
+4. Visit http://127.0.0.1:4000
 
-5. Create superuser:
-   ```bash
-   python manage.py createsuperuser
-   ```
+### Adding Content
 
-6. Start server:
-   ```bash
-   python manage.py runserver
-   ```
+#### New Posts
 
-## Production Deployment
-
-### Environment Variables
-
-Copy `.env.production` to `.env` and configure:
-
-- `SECRET_KEY`: Django secret key
-- `DEBUG`: Set to `False`
-- `ALLOWED_HOSTS`: Your domain(s)
-- `DATABASE_URL`: PostgreSQL connection string
-- `CSRF_TRUSTED_ORIGINS`: Trusted origins for CSRF
-
-### Docker
-
-Build and run with Docker:
-
-```bash
-docker build -f Dockerfile.prod -t two-spoons-online .
-docker run -p 8000:8000 --env-file .env two-spoons-online
+Create a new file in `_posts/` with the format:
+```
+YYYY-MM-DD-title.md
 ```
 
-### GitHub Actions
+Example front matter:
+```yaml
+---
+layout: post
+title: "your post title"
+date: 2024-01-01 12:00:00 +0000
+categories: [writing] # or [casting] or [coding]
+author: your_name
+---
 
-The repository includes GitHub Actions workflow for:
+Your content here...
+```
 
-- Running tests on pull requests
-- Building and pushing Docker images to GitHub Container Registry
-- Automated deployment on main branch pushes
+#### Categories
+
+Posts are automatically categorized based on the `categories` field in the front matter:
+- `[writing]` - Creative writing and literature
+- `[casting]` - Auditions and performance
+- `[coding]` - Programming and technical articles
+
+## Deployment
+
+### GitHub Pages
+
+The site automatically deploys to GitHub Pages when you push to the main branch. The Jekyll build process is handled by GitHub Actions.
+
+### Manual Deployment
+
+1. Build the site:
+   ```bash
+   bundle exec jekyll build
+   ```
+
+2. The generated site will be in `_site/`
 
 ## Project Structure
 
 ```
-├── blog/                   # Blog Django app
-├── blog_site/             # Main Django project
-│   └── settings/          # Split settings files
-├── templates/             # HTML templates
-├── static/               # Static files
+├── _layouts/              # Jekyll layouts
+├── _includes/             # Reusable Jekyll components
+├── _posts/               # Blog posts
+├── assets/css/           # Stylesheets
 ├── .github/workflows/    # GitHub Actions
-├── requirements.txt      # Python dependencies
-├── Dockerfile.prod       # Production Dockerfile
-└── manage.py            # Django management script
+├── _config.yml          # Jekyll configuration
+├── Gemfile              # Ruby dependencies
+└── index.html          # Homepage
 ```
+
+## Customization
+
+### Styling
+
+The Dracula theme styles are defined in `assets/css/main.scss`. The site uses:
+- CSS custom properties for colors
+- Input Mono font for all text
+- Lowercase text transformation
+- Bootstrap for responsive layout
+
+### Configuration
+
+Site settings can be modified in `_config.yml`:
+- Site title and description
+- URL and baseurl
+- Jekyll plugins
+- Build settings
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Add tests if applicable
+4. Test locally with `bundle exec jekyll serve`
 5. Submit a pull request
 
 ## License

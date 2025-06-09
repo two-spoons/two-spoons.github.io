@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="col-md-8">
+        <h1>{{ page.title | downcase }}</h1>
+        {% if page.description %}
+        <p class="lead">{{ page.description }}</p>
+        {% endif %}
+        
+        {% assign category_posts = site.categories[page.category] %}
+        {% for post in category_posts limit: 5 %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title | downcase }}</a>
+                </h2>
+                <p class="card-text text-muted">
+                    by {{ post.author | default: "admin" }} on {{ post.date | date: "%B %d, %Y" }}
+                </p>
+                <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                <a href="{{ post.url | relative_url }}" class="btn btn-primary">read more</a>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if category_posts.size == 0 %}
+        <div class="alert alert-info">
+            <h4>no posts in {{ page.title | downcase }} yet!</h4>
+            <p>check back later for new posts in this category.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>about {{ page.title | downcase }}</h4>
+            </div>
+            <div class="card-body">
+                {% if page.description %}
+                    <p>{{ page.description }}</p>
+                {% else %}
+                    <p>posts about {{ page.title | downcase }}.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

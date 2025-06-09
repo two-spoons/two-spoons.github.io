@@ -1,0 +1,177 @@
+---
+---
+
+// Dracula color scheme
+:root {
+    --dracula-bg: #282a36;
+    --dracula-current-line: #44475a;
+    --dracula-foreground: #f8f8f2;
+    --dracula-comment: #6272a4;
+    --dracula-cyan: #8be9fd;
+    --dracula-green: #50fa7b;
+    --dracula-orange: #ffb86c;
+    --dracula-pink: #ff79c6;
+    --dracula-purple: #bd93f9;
+    --dracula-red: #ff5555;
+    --dracula-yellow: #f1fa8c;
+}
+
+body {
+    background-color: var(--dracula-bg);
+    color: var(--dracula-foreground);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.navbar {
+    background-color: var(--dracula-current-line) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--dracula-foreground) !important;
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.nav-link:hover {
+    color: var(--dracula-cyan) !important;
+}
+
+.card {
+    background-color: var(--dracula-current-line);
+    border: 1px solid var(--dracula-comment);
+    color: var(--dracula-foreground);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.card-header {
+    background-color: var(--dracula-purple);
+    color: var(--dracula-bg);
+    border-bottom: 1px solid var(--dracula-comment);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.btn-primary {
+    background-color: var(--dracula-purple);
+    border-color: var(--dracula-purple);
+    color: var(--dracula-bg);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.btn-primary:hover {
+    background-color: var(--dracula-pink);
+    border-color: var(--dracula-pink);
+}
+
+.btn-secondary {
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.badge.bg-primary {
+    background-color: var(--dracula-cyan) !important;
+    color: var(--dracula-bg);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.text-muted {
+    color: var(--dracula-comment) !important;
+}
+
+.alert-info {
+    background-color: var(--dracula-current-line);
+    border-color: var(--dracula-cyan);
+    color: var(--dracula-foreground);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.pagination .page-link {
+    background-color: var(--dracula-current-line);
+    border-color: var(--dracula-comment);
+    color: var(--dracula-foreground);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--dracula-purple);
+    border-color: var(--dracula-purple);
+    color: var(--dracula-bg);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--dracula-purple);
+    border-color: var(--dracula-purple);
+    color: var(--dracula-bg);
+}
+
+a {
+    color: var(--dracula-cyan);
+}
+
+a:hover {
+    color: var(--dracula-pink);
+}
+
+.text-decoration-none {
+    color: var(--dracula-foreground) !important;
+}
+
+.text-decoration-none:hover {
+    color: var(--dracula-cyan) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dracula-purple);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.card-title a {
+    color: var(--dracula-purple) !important;
+}
+
+.card-title a:hover {
+    color: var(--dracula-pink) !important;
+}
+
+footer {
+    background-color: var(--dracula-current-line) !important;
+    color: var(--dracula-foreground);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+.lead {
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+}
+
+// Content styling
+.content {
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+    line-height: 1.6;
+}
+
+// Code blocks
+pre, code {
+    background-color: var(--dracula-current-line);
+    color: var(--dracula-foreground);
+    border: 1px solid var(--dracula-comment);
+    font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
+}
+
+// Blockquotes
+blockquote {
+    border-left: 4px solid var(--dracula-purple);
+    background-color: var(--dracula-current-line);
+    padding: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+}

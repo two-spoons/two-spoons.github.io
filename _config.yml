@@ -1,0 +1,66 @@
+# Site settings
+title: two_spoons_online
+description: welcome to two_spoons_online! here you'll find articles about writing, casting, and coding.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://twobloodyspoons.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - manage.py
+  - requirements.txt
+  - blog/
+  - blog_site/
+  - Dockerfile*
+  - docker-compose.yml
+  - venv/
+  - db.sqlite3
+  - *.py
+  - create_categories.py
+  - setup_local.sh
+  - run_local.sh
+
+# Front Matter Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Categories
+categories:
+  - writing
+  - casting
+  - coding
+
+# Site configuration
+timezone: UTC
+encoding: "utf-8"

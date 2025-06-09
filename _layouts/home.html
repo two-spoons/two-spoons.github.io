@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="col-md-8">
+        <h1>latest blog posts</h1>
+        
+        {% assign recent_posts = site.posts | limit: 5 %}
+        {% for post in recent_posts %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title | downcase }}</a>
+                </h2>
+                <p class="card-text text-muted">
+                    <span class="badge bg-primary">{{ post.categories | first }}</span>
+                    by {{ post.author | default: "admin" }} on {{ post.date | date: "%B %d, %Y" }}
+                </p>
+                <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                <a href="{{ post.url | relative_url }}" class="btn btn-primary">read more</a>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if site.posts.size == 0 %}
+        <div class="alert alert-info">
+            <h4>no posts yet!</h4>
+            <p>check back later for new blog posts.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>about</h4>
+            </div>
+            <div class="card-body">
+                <p>{{ site.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
