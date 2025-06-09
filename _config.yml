@@ -1,6 +1,6 @@
 # Site settings
-title: two_spoons_online
-description: welcome to two_spoons_online! here you'll find articles about writing, casting, and coding.
+title: two_spoons
+description: welcome to two_spoons! here you'll find articles about writing, casting, and coding.
 baseurl: "/two_spoons_online" # the subpath of your site, e.g. /blog
 url: "https://twobloodyspoons.github.io" # the base hostname & protocol for your site
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "welcome to two_spoons_online"
+title: "welcome to two_spoons"
 date: 2024-01-01 12:00:00 +0000
 categories: [writing]
 author: two_spoons

@@ -1,4 +1,4 @@
-# two_spoons_online
+# two_spoons
 
 A Jekyll blog with categories for Writing, Casting, and Coding, featuring a Dracula theme and Input Mono font.
 
