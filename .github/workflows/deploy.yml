@@ -77,6 +77,8 @@ jobs:
         context: .
         file: ./Dockerfile.prod
         push: true
+        build-args: |
+          SECRET_KEY=github-actions-build-secret-key
         tags: |
           ghcr.io/twobloodyspoons/two-spoons-online:latest
           ghcr.io/twobloodyspoons/two-spoons-online:${{ github.sha }}

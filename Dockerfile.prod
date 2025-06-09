@@ -24,6 +24,10 @@ COPY . .
 # Create static files directory
 RUN mkdir -p /app/staticfiles
 
+# Accept SECRET_KEY as build argument
+ARG SECRET_KEY=docker-build-secret-key-for-collectstatic
+ENV SECRET_KEY=$SECRET_KEY
+
 # Collect static files
 RUN python manage.py collectstatic --noinput --settings=blog_site.settings.production
 
