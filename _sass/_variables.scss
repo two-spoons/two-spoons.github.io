@@ -5,37 +5,50 @@
 
 @use "sass:color";
 
-// Colors
-$red-color: #ff3636 !default;
-$red-color-dark: #b71c1c !default;
-$orange-color: #f29105 !default;
-$blue-color: #ff79c6 !default;
-$blue-color-dark: #00369f !default;
-$cyan-color: #f33df3 !default;
-$light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
-$green-color: #50fa7b !default;
-$green-color-lime: #b7d12a !default;
-$green-color-dark: #009f06 !default;
-$green-color-light: #ddffdd !default;
-$green-color-bright: #11d68b !default;
-$purple-color: #b509ac !default;
-$light-purple-color: color.adjust($purple-color, $lightness: 25%);
-$pink-color: #f92080 !default;
-$pink-color-light: #ffdddd !default;
-$yellow-color: #efcc00 !default;
+// Dracula Color Palette
+$dracula-background: #282a36 !default;
+$dracula-current-line: #44475a !default;
+$dracula-foreground: #f8f8f2 !default;
+$dracula-comment: #6272a4 !default;
+$dracula-cyan: #8be9fd !default;
+$dracula-green: #50fa7b !default;
+$dracula-orange: #ffb86c !default;
+$dracula-pink: #ff79c6 !default;
+$dracula-purple: #bd93f9 !default;
+$dracula-red: #ff5555 !default;
+$dracula-yellow: #f1fa8c !default;
 
-$grey-color: #828282 !default;
-$grey-color-light: color.adjust($grey-color, $lightness: 40%);
-$grey-color-dark: #1f212b;
-$grey-900: #212529;
+// Colors (using Dracula palette)
+$red-color: $dracula-red !default;
+$red-color-dark: color.adjust($dracula-red, $lightness: -20%) !default;
+$orange-color: $dracula-orange !default;
+$blue-color: $dracula-cyan !default;
+$blue-color-dark: color.adjust($dracula-cyan, $lightness: -30%) !default;
+$cyan-color: $dracula-cyan !default;
+$light-cyan-color: color.adjust($cyan-color, $lightness: 10%);
+$green-color: $dracula-green !default;
+$green-color-lime: $dracula-green !default;
+$green-color-dark: color.adjust($dracula-green, $lightness: -20%) !default;
+$green-color-light: color.adjust($dracula-green, $lightness: 40%) !default;
+$green-color-bright: $dracula-green !default;
+$purple-color: $dracula-purple !default;
+$light-purple-color: color.adjust($purple-color, $lightness: 10%);
+$pink-color: $dracula-pink !default;
+$pink-color-light: color.adjust($dracula-pink, $lightness: 40%) !default;
+$yellow-color: $dracula-yellow !default;
 
-$white-color: #ffffff !default;
-$black-color: #000000 !default;
+$grey-color: $dracula-comment !default;
+$grey-color-light: color.adjust($grey-color, $lightness: 30%);
+$grey-color-dark: $dracula-background;
+$grey-900: $dracula-current-line;
+
+$white-color: $dracula-foreground !default;
+$black-color: $dracula-background !default;
 
 // Theme colors
 
-$code-bg-color-light: rgba($purple-color, 0.05);
-$code-bg-color-dark: #131414 !default;
+$code-bg-color-light: rgba($purple-color, 0.1);
+$code-bg-color-dark: $dracula-current-line !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";
