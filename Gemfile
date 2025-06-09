@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 3.9'
+gem 'jekyll', '~> 4.0'
 gem 'webrick'
 gem 'kramdown-parser-gfm'
 gem 'base64'
@@ -22,7 +22,7 @@ group :jekyll_plugins do
     gem 'jekyll-minifier'
     gem 'jekyll-paginate-v2'
     gem 'jekyll-regex-replace'
-    gem 'jekyll-scholar'
+    gem 'jekyll-scholar', '~> 7.0'
     gem 'jekyll-sitemap'
     gem 'jekyll-tabs'
     gem 'jekyll-toc'
