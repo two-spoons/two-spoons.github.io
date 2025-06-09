@@ -45,6 +45,10 @@ body {
     text-transform: lowercase;
 }
 
+.card-body {
+    color: #ffffff !important;
+}
+
 .card-header {
     background-color: var(--dracula-purple);
     color: var(--dracula-bg);
