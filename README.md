@@ -36,7 +36,7 @@ A Jekyll blog with categories for Writing, Casting, and Coding, featuring a Drac
    bundle exec jekyll serve
    ```
 
-4. Visit http://127.0.0.1:4000
+4. Visit https://127.0.0.1:4000
 
 ### Adding Content
 

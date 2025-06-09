@@ -4,6 +4,9 @@ description: welcome to two_spoons! here you'll find articles about writing, cas
 baseurl: "/two_spoons_online" # the subpath of your site, e.g. /blog
 url: "https://twobloodyspoons.github.io" # the base hostname & protocol for your site
 
+# HTTPS enforcement
+enforce_ssl: "twobloodyspoons.github.io"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
@@ -22,6 +25,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-github-metadata
 
+# Include files for processing
+include:
+  - _headers
+
 # Exclude files from processing
 exclude:
   - Gemfile
@@ -36,6 +43,7 @@ exclude:
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
+  - venv/
 
 # Front Matter Defaults
 defaults:
