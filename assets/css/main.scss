@@ -50,8 +50,8 @@ body {
 }
 
 .card-header {
-    background-color: var(--dracula-purple);
-    color: var(--dracula-bg);
+    background-color: var(--dracula-current-line);
+    color: var(--dracula-foreground);
     border-bottom: 1px solid var(--dracula-comment);
     font-family: 'Input Mono', 'Hack', 'Courier New', Courier, monospace;
     text-transform: lowercase;
