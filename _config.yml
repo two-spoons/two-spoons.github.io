@@ -44,6 +44,8 @@ exclude:
   - .jekyll-cache/
   - gemfiles/
   - venv/
+  - .ruby-version
+  - README.md
 
 # Front Matter Defaults
 defaults:

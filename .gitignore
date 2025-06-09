@@ -4,7 +4,7 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
-# Ruby
+# Ruby/Bundler
 .bundle/
 vendor/
 Gemfile.lock
@@ -25,5 +25,13 @@ Gemfile.lock
 ehthumbs.db
 Thumbs.db
 
+# Python
+venv/
+__pycache__/
+*.pyc
+
 # Local development
 .env
+
+# Logs
+*.log
