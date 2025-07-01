@@ -1,15 +1,8 @@
 # two_spoons
 
-A Jekyll blog with categories for Writing, Casting, and Coding, featuring a Dracula theme and Input Mono font.
+A blog
 
 ## Features
-
-- **Categories**: Writing, Casting, Coding
-- **Theme**: Dracula color scheme with lowercase text
-- **Font**: Input Mono monospaced font
-- **Responsive**: Bootstrap-based responsive design
-- **Static Site**: Jekyll-powered for fast performance
-- **GitHub Pages**: Automatic deployment via GitHub Actions
 
 ## Development
 
@@ -63,10 +56,9 @@ Your content here...
 #### Categories
 
 Posts are automatically categorized based on the `categories` field in the front matter:
-- `[writing]` - Creative writing and literature
-- `[casting]` - Auditions and performance
-- `[coding]` - Programming and technical articles
-
+- `[writing]` 
+- `[casting]` 
+- `[coding]`
 ## Deployment
 
 ### GitHub Pages
@@ -108,19 +100,7 @@ The Dracula theme styles are defined in `assets/css/main.scss`. The site uses:
 ### Configuration
 
 Site settings can be modified in `_config.yml`:
-- Site title and description
-- URL and baseurl
-- Jekyll plugins
-- Build settings
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test locally with `bundle exec jekyll serve`
-5. Submit a pull request
-
 ## License
-
-This project is licensed under the MIT License.
