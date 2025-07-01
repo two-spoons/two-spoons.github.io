@@ -7,14 +7,7 @@
 @use "themes";
 @use "layout" with ($max-content-width: {{ site.max_width }});
 @use "base";
-@use "distill";
-@use "cv";
-@use "tabs";
-@use "typograms";
 @use "font-awesome/fontawesome";
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
-@use "tabler-icons/tabler-icons.scss";
-@use "tabler-icons/tabler-icons-filled.scss";
-@use "tabler-icons/tabler-icons-outline.scss";
