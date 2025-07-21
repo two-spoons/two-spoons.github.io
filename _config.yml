@@ -632,7 +632,7 @@ third_party_libraries:
     version: "5.27.0"
   vega-embed:
     integrity:
-      js: "sha256-FPCJ9JYCC9AZSpvC/t/wHBX7ybueZhIqOMjpWqfl3DU=",
+      js: "sha256-FPCJ9JYCC9AZSpvC/t/wHBX7ybueZhIqOMjpWqfl3DU="
       js_map: "sha256-VBbfSEFYSMdX/rTdGrONEHNP6BprCB7H/LpMMNt/cPA="
     url:
       js: "https://cdn.jsdelivr.net/npm/vega-embed@{{version}}/build/vega-embed.min.js"
