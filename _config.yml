@@ -8,9 +8,9 @@ middle_name:
 last_name:
 email: twospoonstv@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  welcome to two_spoons! here you'll find articles about writing, casting, and coding.
+  welcome to two_spoons.
 footer_text: >
-  Derived from <a href="https://github.com/two-spoons/two-spoons.github.io">two-spoons.github.io</a> theme.
+  derived from an llm's hallucination
 #  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: folio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
