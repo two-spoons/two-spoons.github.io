@@ -9,9 +9,9 @@ display_categories: [work, fun, nonsense]
 horizontal: false
 ---
 
-Twitch<https://www.twitch.tv/twospoonstv>
+Twitch[def]
 
-Discord<https://discord.gg/YJrpQD2T>
+Discord[def2]
 
 {%comment%}
 
@@ -70,3 +70,7 @@ Discord<https://discord.gg/YJrpQD2T>
 {% endif %}
 </div>
 {%endcomment%}
+
+
+[def]: https://www.twitch.tv/twospoonstv
+[def2]: https://discord.gg/YJrpQD2T
