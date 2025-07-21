@@ -21,7 +21,7 @@
   
 </title>
 <meta name="author" content="two_spoons ">
-<meta name="description" content="welcome to two_spoons! here you'll find articles about writing, casting, and coding.
+<meta name="description" content="welcome to two_spoons.
 ">
 
   <meta name="keywords" content="folio-website">
@@ -263,7 +263,7 @@ Sitemap: https://two-spoons.github.io/pages/TwoBloodySpoons/two-spoons.github.io
       &copy; Copyright 2025
       two_spoons
       
-      . Derived from <a href="https://github.com/two-spoons/two-spoons.github.io">two-spoons.github.io</a> theme.
+      . derived from an llm's hallucination
 
       
       
@@ -508,7 +508,7 @@ Sitemap: https://two-spoons.github.io/pages/TwoBloodySpoons/two-spoons.github.io
               },
             },{id: "nav-casting",
               title: "casting",
-              description: "i like talking to my friends about video games. i like talking to video games about video games. i like sighing into the abyss with a video game for company.",
+              description: "i like talking to my friends about video games. i also like sighing into the abyss with a video game for company.",
               section: "Navigation",
               handler: () => {
                 window.location.href = "/pages/TwoBloodySpoons/two-spoons.github.io/casting/";
