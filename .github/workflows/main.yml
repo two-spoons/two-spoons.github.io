@@ -16,5 +16,5 @@ jobs:
         uses: AndreasAugustin/actions-template-sync@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_repo_path: alshedivat/al-folio
+          source_repo_path: two-spoons/two-spoons.github.io
           upstream_branch: master

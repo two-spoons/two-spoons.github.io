@@ -20,7 +20,7 @@ body:
         Please check if somebody else has already filed the same issue.
         If you find a similar issue, please add a 👍 reaction or comment on the original post.
       options:
-        - label: I read through [FAQ](https://github.com/alshedivat/al-folio/blob/master/FAQ.md) and searched through the [past issues](https://github.com/alshedivat/al-folio/issues), none of which addressed my issue.
+        - label: I read through [FAQ](https://github.com/two-spoons/two-spoons.github.io/blob/main/FAQ.md) and searched through the [past issues](https://github.com/two-spoons/two-spoons.github.io/issues), none of which addressed my issue.
           required: true
         - label: Yes, I have checked that this issue isn't already filed.
           required: true

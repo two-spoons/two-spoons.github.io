@@ -1,92 +1,16 @@
-<<<<<<< HEAD
-# Site settings
-title: two_spoons
-description: welcome to two_spoons! here you'll find articles about writing, casting, and coding.
-baseurl: "/two_spoons_online" # the subpath of your site, e.g. /blog
-url: "https://twobloodyspoons.github.io" # the base hostname & protocol for your site
-
-# HTTPS enforcement
-enforce_ssl: "twobloodyspoons.github.io"
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: /:categories/:title/
-incremental: true
-
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /:categories/:title/
-
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-github-metadata
-
-# Include files for processing
-include:
-  - _headers
-
-# Exclude files from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - "*.gemspec"
-  - "*.gem"
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - venv/
-  - .ruby-version
-  - README.md
-
-# Front Matter Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-
-# Categories
-categories:
-  - writing
-  - casting
-  - coding
-
-# Site configuration
-timezone: UTC
-encoding: "utf-8"
-
-# GitHub Pages / GitHub Actions compatibility
-github: [metadata]
-=======
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: two_spoons # the website title (if blank, full name will be used instead)
 first_name: two_spoons
 middle_name:
 last_name:
 email: twospoonstv@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  welcome to two_spoons! here you'll find articles about writing, casting, and coding.
 footer_text: >
-  Derived from <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  Derived from <a href="https://github.com/two-spoons/two-spoons.github.io">two-spoons.github.io</a> theme.
 #  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: folio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
@@ -97,6 +21,9 @@ baseurl: / # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
+
+# HTTPS enforcement
+enforce_ssl: "twobloodyspoons.github.io"
 
 # -----------------------------------------------------------------------------
 # Theme
@@ -231,7 +158,7 @@ giscus:
   strict: 1 # use strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
   input_position: bottom # whether to display input form below (bottom) or above (top) the comments
-  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
+  theme: preferred_color_scheme # name of the color scheme (preferred works well with two-spoons.github.io light/dark mode)
   emit_metadata: 0
   lang: en
 
@@ -244,7 +171,7 @@ disqus_shortname: # put your disqus shortname
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
   - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+    rss_url: https://medium.com/@two-spoons/feed
   - name: Google Blog
     posts:
       - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
@@ -264,6 +191,9 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
   news:
     output: true
     permalink: /:collection/:title/
@@ -299,7 +229,7 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages"]
+include: ["_pages", "_headers"]
 exclude:
   - bin/
   - CONTRIBUTING.md
@@ -327,6 +257,13 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - venv/
+  - .ruby-version
+  - "*.gemspec"
+  - "*.gem"
 keep_files:
   - CNAME
   - .nojekyll
@@ -348,9 +285,20 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+  - jekyll-seo-tag
+  - jekyll-github-metadata
 
 # Sitemap settings
 defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
   - scope:
       path: "assets"
     values:
@@ -400,9 +348,6 @@ scholar:
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
-  # Note: if you have latex math in your bibtex, the latex filter
-  # preprocessing may conflict with MathJAX if the latter is enabled.
-  # See https://github.com/alshedivat/al-folio/issues/357.
   bibtex_filters: [latex, smallcaps, superscript]
 
   replace_strings: true
@@ -472,7 +417,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: true # enables responsive images for your site
   widths:
     - 480
     - 800
@@ -587,8 +532,8 @@ third_party_libraries:
       js: "sha256-EXHg3x1K4oIWdyohPeKX2ZS++Wxt/FRPH7Nl01nat1o="
       map: "sha256-3wfqS2WU5kGA/ePcgFzJXl5oSN1QsgZI4/edprTgX8w="
     url:
-      css: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/styles.min.css"
-      js: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/index.min.js"
+      css: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/styles.min.css",
+      js: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/index.min.js",
       map: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/index.js.map"
     version: "8.0.6"
   jquery:
@@ -687,7 +632,7 @@ third_party_libraries:
     version: "5.27.0"
   vega-embed:
     integrity:
-      js: "sha256-FPCJ9JYCC9AZSpvC/t/wHBX7ybueZhIqOMjpWqfl3DU="
+      js: "sha256-FPCJ9JYCC9AZSpvC/t/wHBX7ybueZhIqOMjpWqfl3DU=",
       js_map: "sha256-VBbfSEFYSMdX/rTdGrONEHNP6BprCB7H/LpMMNt/cPA="
     url:
       js: "https://cdn.jsdelivr.net/npm/vega-embed@{{version}}/build/vega-embed.min.js"
@@ -722,4 +667,6 @@ jsonresume:
   - languages
   - interests
   - references
->>>>>>> master
+
+# GitHub Pages / GitHub Actions compatibility
+github: [metadata]

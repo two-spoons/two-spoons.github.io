@@ -54,4 +54,4 @@ jobs:
           tag: "slim"
 
       # Push to the registry
-      - run: docker image push amirpourmand/al-folio:slim
+      - run: docker image push two-spoons/two-spoons.github.io:slim

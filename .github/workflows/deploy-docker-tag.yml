@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: amirpourmand/al-folio
+          images: two-spoons/two-spoons.github.io
 
       - name: Login
         uses: docker/login-action@v3
