@@ -35,3 +35,10 @@ __pycache__/
 
 # Logs
 *.log
+
+# Other
+.ruby-version
+.tweet-cache
+assets/libs/
+node_modules/
+.ideajekyll.log

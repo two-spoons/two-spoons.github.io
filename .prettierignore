@@ -1,0 +1,31 @@
+# Minified and generated files
+**/*.map
+**/*.min.css
+**/*.min.js
+
+# Jekyll templating files that can't be parsed by Prettier
+assets/css/main.scss
+
+# Generated or third-party JS files
+assets/js/search-data.js
+assets/js/distillpub/template.v2.js
+assets/js/search/*.js
+
+# HTML files with complex formatting
+assets/plotly/demo.html
+lighthouse_results/**
+
+# Posts with complex math notation
+_posts/2015-10-20-math.md
+
+# Third-party SCSS libraries
+_sass/font-awesome/*.scss
+_sass/tabler-icons/*.scss
+
+# Build outputs and cache
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+node_modules/
+vendor/

@@ -1,14 +1,42 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "jekyll", "~> 4.3"
-gem "webrick", "~> 1.7"
+gem 'jekyll', '~> 4.0'
+gem 'webrick'
+gem 'kramdown-parser-gfm'
+gem 'base64'
+gem 'logger'
+gem 'bigdecimal'
+gem 'classifier-reborn'
+gem 'mini_racer'
+gem 'unicode_utils'
+gem 'ostruct'
 gem "faraday-retry"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-sitemap"
-  gem "jekyll-seo-tag"
-  gem "jekyll-github-metadata"
+    gem 'jekyll-archives'
+    gem 'jekyll-email-protect'
+    gem 'jekyll-feed'
+    gem 'jekyll-get-json'
+    gem 'jekyll-imagemagick'
+    gem 'jekyll-jupyter-notebook'
+    gem 'jekyll-link-attributes'
+    gem 'jekyll-minifier'
+    gem 'jekyll-paginate-v2'
+    gem 'jekyll-regex-replace'
+    gem 'jekyll-scholar', '~> 7.0'
+    gem 'jekyll-sitemap'
+    gem 'jekyll-tabs'
+    gem 'jekyll-toc'
+    gem 'jekyll-twitter-plugin'
+    gem 'jemoji'
+    gem "jekyll-seo-tag"
+    gem "jekyll-github-metadata"
+end
+
+group :other_plugins do
+    gem 'css_parser'
+    gem 'feedjira'
+    gem 'httparty'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

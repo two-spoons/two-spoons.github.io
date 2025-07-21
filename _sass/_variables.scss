@@ -1,0 +1,64 @@
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * To adjust anything, simply edit the variables below and rebuild the theme.
+ ******************************************************************************/
+
+@use "sass:color";
+
+// Dracula Color Palette
+$dracula-background: #282a36 !default;
+$dracula-current-line: #44475a !default;
+$dracula-foreground: #f8f8f2 !default;
+$dracula-comment: #6272a4 !default;
+$dracula-cyan: #8be9fd !default;
+$dracula-green: #50fa7b !default;
+$dracula-orange: #ffb86c !default;
+$dracula-pink: #ff79c6 !default;
+$dracula-purple: #bd93f9 !default;
+$dracula-red: #ff5555 !default;
+$dracula-yellow: #f1fa8c !default;
+
+// Colors (using Dracula palette)
+$red-color: $dracula-red !default;
+$red-color-dark: color.adjust($dracula-red, $lightness: -20%) !default;
+$orange-color: $dracula-orange !default;
+$blue-color: $dracula-cyan !default;
+$blue-color-dark: color.adjust($dracula-cyan, $lightness: -30%) !default;
+$cyan-color: $dracula-cyan !default;
+$light-cyan-color: color.adjust($cyan-color, $lightness: 10%);
+$green-color: $dracula-green !default;
+$green-color-lime: $dracula-green !default;
+$green-color-dark: color.adjust($dracula-green, $lightness: -20%) !default;
+$green-color-light: color.adjust($dracula-green, $lightness: 40%) !default;
+$green-color-bright: $dracula-green !default;
+$purple-color: $dracula-purple !default;
+$light-purple-color: color.adjust($purple-color, $lightness: 10%);
+$pink-color: $dracula-pink !default;
+$pink-color-light: color.adjust($dracula-pink, $lightness: 40%) !default;
+$yellow-color: $dracula-yellow !default;
+
+$grey-color: $dracula-comment !default;
+$grey-color-light: color.adjust($grey-color, $lightness: 30%);
+$grey-color-dark: $dracula-background;
+$grey-900: $dracula-current-line;
+
+$white-color: $dracula-foreground !default;
+$black-color: $dracula-background !default;
+
+// Theme colors
+
+$code-bg-color-light: rgba($purple-color, 0.1);
+$code-bg-color-dark: $dracula-current-line !default;
+
+// Font awesome location
+$fa-font-path: "../webfonts";
+// Tabler icons location
+$ti-font-path: "../fonts";
+
+// Back To Top button config
+$back-to-top-z-index: 10;
+$back-to-top-bottom: 30px;
+$back-to-top-right: 30px;
+$back-to-top-diameter: 40px;
+$back-to-top-height: $back-to-top-diameter;
+$back-to-top-width: $back-to-top-diameter;
