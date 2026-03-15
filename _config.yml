@@ -10,12 +10,12 @@ email: twospoonstv@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   welcome to two_spoons.
 footer_text: >
-  derived from an llm's hallucination
+  derived from hallucination
 #  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: folio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 repository: TwoBloodySpoons/two-spoons.github.io # Add this line
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: twospoons_circle.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://twospoons.online # the base hostname & protocol for your site
 baseurl: / # the subpath of your site, e.g. /blog/. Leave blank for root
