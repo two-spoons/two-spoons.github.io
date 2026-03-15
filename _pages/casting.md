@@ -2,16 +2,16 @@
 layout: page
 title: casting
 permalink: /casting/
-description: i like talking to my friends about video games. i like talking to video games about video games. i like sighing into the abyss with a video game for company.
+description: i like talking to my friends about video games. i also like sighing into the abyss with a video game for company.
 nav: true
 nav_order: 2
 display_categories: [work, fun, nonsense]
 horizontal: false
 ---
 
-Twitch[def]
+[twitch]
 
-Discord[def2]
+[discord]
 
 {%comment%}
 
@@ -72,5 +72,5 @@ Discord[def2]
 {%endcomment%}
 
 
-[def]: https://www.twitch.tv/twospoonstv
-[def2]: https://discord.gg/YJrpQD2T
+[twitch]: https://www.twitch.tv/twospoonstv
+[discord]: https://discord.gg/YJrpQD2T
