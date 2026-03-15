@@ -260,7 +260,7 @@ Sitemap: https://two-spoons.github.io/pages/TwoBloodySpoons/two-spoons.github.io
     
   <footer class="fixed-bottom" role="contentinfo">
     <div class="container mt-0">
-      &copy; Copyright 2025
+      &copy; Copyright 2026
       two_spoons
       
       . derived from an llm's hallucination
