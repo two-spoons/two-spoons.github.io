@@ -189,3 +189,28 @@ blockquote {
     margin: 1rem 0;
     font-style: italic;
 }
+
+// Header social icons
+.header-social-icons {
+    gap: 0.6rem;
+
+    .header-social-divider {
+        display: inline-block;
+        width: 1.5rem;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        opacity: 0.75;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        img {
+            filter: var(--header-social-icon-filter, none);
+        }
+    }
+}
