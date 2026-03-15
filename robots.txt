@@ -79,7 +79,7 @@
   >
 
 <link rel="stylesheet" href="/pages/TwoBloodySpoons/two-spoons.github.io/assets/css/main.css">
-<link rel="canonical" href="https://two-spoons.github.io/pages/TwoBloodySpoons/two-spoons.github.io/robots.txt">
+<link rel="canonical" href="https://twospoons.online/pages/TwoBloodySpoons/two-spoons.github.io/robots.txt">
 
 <!-- Dark Mode -->
 <script src="/pages/TwoBloodySpoons/two-spoons.github.io/assets/js/theme.js"></script>
@@ -251,7 +251,7 @@
         User-agent: *
 Disallow:
 
-Sitemap: https://two-spoons.github.io/pages/TwoBloodySpoons/two-spoons.github.io/sitemap.xml
+Sitemap: https://twospoons.online/pages/TwoBloodySpoons/two-spoons.github.io/sitemap.xml
 
       
     </div>
