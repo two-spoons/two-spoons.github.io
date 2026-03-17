@@ -2,7 +2,7 @@
 layout: page
 title: casting
 permalink: /casting/
-description: i like talking to my friends about video games. i also like sighing into the abyss with a video game for company.
+description: i like talking to my friends about video games. you could be that parasocial relationship.
 nav: true
 nav_order: 2
 display_categories: [work, fun, nonsense]
