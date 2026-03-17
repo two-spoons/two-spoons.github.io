@@ -1,5 +1,6 @@
 ---
 layout: about
+permalink: /about/
 title: about
 
 subtitle: <a href='#'>Affiliations</a>.
