@@ -76,12 +76,14 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 acm_id: # your dl.acm.org/profile/id
 blogger_url: # your blogger URL
-bluesky_url: https://bsky.app/profile/twospoons.online # your bluesky URL
+bluesky_url:  # your bluesky URL
 dblp_url: # your DBLP profile url
 discord_id: https://discord.gg/MDNXQzfmp2 # your discord id (18-digit unique numerical identifier)
+twitch_username: twospoonstv # your twitch username
+substack_username: twospoonsonline # your substack username
 facebook_id: # your facebook id
 flickr_id: # your flickr id
-github_username: TwoBloodySpoons # your GitHub user name
+github_username:  # your GitHub user name
 gitlab_username: # your GitLab user name
 ieee_id: # your ieeexplore.ieee.org/author/id
 instagram_id: # your instagram id
@@ -110,12 +112,12 @@ whatsapp_number: # your WhatsApp number (full phone number in international form
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
 work_url: # work page URL
-x_username: https://bsky.app/profile/twospoons.online # your X handle
+x_username: h# your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
 contact_note: >
-  send me an email. github's empty. twitter's dead. head to the discord. stalk me on bsky.
+  send me an email. head to discord. 
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
