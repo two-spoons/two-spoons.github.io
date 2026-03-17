@@ -6,12 +6,10 @@ categories: [writing]
 author: two_spoons
 ---
 
-welcome to my corner of the internet! this is where i'll be sharing thoughts on writing, casting, and coding.
+welcome to the void, this is where i'll be comforting the abyss with thoughts on writing, casting, and coding.
 
 ## what you'll find here
 
-- **writing**: creative pieces, storytelling techniques, and literary thoughts
-- **casting**: insights from the world of auditions and performance
-- **coding**: technical articles and programming adventures
-
-stay tuned for more content coming soon!
+- **writing**: philosophy, theory, games
+- **casting**: a warm nook, and a blunted wit
+- **coding**: find a problem solve a problem

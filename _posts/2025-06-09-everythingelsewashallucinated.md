@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "the past was made up, why is there metadata"
+title: "the past was made up, that's why theres' metadata"
 date: 2025-06-09
 categories: [writing]
 author: two_spoons
