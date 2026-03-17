@@ -15,6 +15,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-an introductions will go here
+an introduction will go here
 
 a purpose statement will follow.
