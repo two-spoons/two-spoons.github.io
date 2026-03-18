@@ -12,4 +12,4 @@ welcome to the void, this is where i'll be comforting the abyss with thoughts on
 
 - **writing**: philosophy, theory, games
 - **casting**: a warm nook, and a blunted wit
-- **coding**: find a problem solve a problem
+- **coding**: find a problem, solve a problem
