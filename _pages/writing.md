@@ -94,7 +94,7 @@ pagination:
 <hr>
 {% endif %}
 
-<ul>
+<ul style="margin-top: 3rem;">
   {% if page.pagination.enabled %}
     {% assign postlist = paginator.posts %}
   {% else %}

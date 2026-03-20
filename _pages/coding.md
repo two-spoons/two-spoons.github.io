@@ -2,11 +2,12 @@
 layout: page
 permalink: /coding/
 title: coding
-description: i put some code together
+description: i put some code together. i have intentions to make some of that some public. we'll see how we go.
 nav: true
 nav_order: 3
 ---
 
+{%comment%}
 ## GitHub users
 
 {% if site.data.repositories.github_users %}
@@ -48,4 +49,5 @@ nav_order: 3
 </div>
 {% endif %}
 
+{%endcomment%}
 {%endcomment%}

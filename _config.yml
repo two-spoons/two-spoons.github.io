@@ -10,11 +10,11 @@ email: twospoonstv@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   welcome to two_spoons.
 footer_text: >
-  derived from hallucination
+  freedom over facticity
 #  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: folio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-repository: TwoBloodySpoons/two-spoons.github.io # Add this line
+repository: two-spoons/two-spoons.github.io # Add this line
 icon: twospoons_circle.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://twospoons.online # the base hostname & protocol for your site
@@ -76,12 +76,14 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 acm_id: # your dl.acm.org/profile/id
 blogger_url: # your blogger URL
-bluesky_url: https://bsky.app/profile/twospoons.online # your bluesky URL
+bluesky_url:  # your bluesky URL
 dblp_url: # your DBLP profile url
 discord_id: https://discord.gg/MDNXQzfmp2 # your discord id (18-digit unique numerical identifier)
+twitch_username: twospoonstv # your twitch username
+substack_username: twospoonsonline # your substack username
 facebook_id: # your facebook id
 flickr_id: # your flickr id
-github_username: TwoBloodySpoons # your GitHub user name
+github_username:  # your GitHub user name
 gitlab_username: # your GitLab user name
 ieee_id: # your ieeexplore.ieee.org/author/id
 instagram_id: # your instagram id
@@ -110,12 +112,12 @@ whatsapp_number: # your WhatsApp number (full phone number in international form
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
 work_url: # work page URL
-x_username: https://bsky.app/profile/twospoons.online # your X handle
+x_username: # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
 contact_note: >
-  send me an email. github's empty. twitter's dead. head to the discord. stalk me on bsky.
+  send me an email. stalk me wherever. head to discord. 
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -135,8 +137,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: digestion # blog_name will be displayed in your blog page
-blog_description: often an idea fascinates
+blog_name: retrospectives # blog_name will be displayed in your blog page
+blog_description: thoughts i was passionate about
 permalink: /blog/:year/:title/
 lsi: true # produce an index for related posts
 
@@ -332,7 +334,7 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["games", "math", "code", "philosophy"] # these tags will be displayed on the front page of your blog
+display_tags: ["thoughts", "codes", "feelings"] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------

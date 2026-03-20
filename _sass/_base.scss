@@ -383,8 +383,16 @@ ul.task-list input[type="checkbox"] {
         transition-property: all 0.2s ease-in-out;
       }
 
+      .social-svg-icon {
+        color: var(--global-text-color);
+        transition: color 0.2s ease-in-out;
+      }
+
       &:hover {
         i::before {
+          color: var(--global-theme-color);
+        }
+        .social-svg-icon {
           color: var(--global-theme-color);
         }
       }
