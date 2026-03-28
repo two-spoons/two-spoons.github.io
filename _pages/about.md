@@ -1,5 +1,6 @@
 ---
 layout: about
+permalink: /about/
 title: about
 
 subtitle: <a href='#'>Affiliations</a>.
@@ -15,6 +16,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-the introductions will go here
+an introduction will go here
 
-the purpose statement will follow.
+a purpose statement will follow.
