@@ -208,6 +208,12 @@ Useful overrides:
    forever. So the bot's commit can't set off the deploy on its own. `jekyll.yml`
    declares `workflow_call:` and the inbox job invokes it — same run, no extra
    token, no loop.
+
+   It also passes the SHA the bot just pushed. Without that, `actions/checkout`
+   defaults to the commit that *started* the run — the one that added the inbox
+   file, before the post existed — and the deploy cheerfully rebuilds the site
+   without the new post while reporting success. This is not hypothetical; it
+   is what happened on the first real run.
 6. The build validates every post filename, builds the site, and deploys to
    GitHub Pages.
 
