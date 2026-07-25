@@ -1,9 +1,8 @@
 ---
 layout: about
-permalink: /about/
+permalink: /
 title: about
 
-subtitle: <a href='#'>Affiliations</a>.
 
 profile:
   align: right
@@ -11,8 +10,6 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: <p>experience assimilate extend</p>
 
-news: false # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 

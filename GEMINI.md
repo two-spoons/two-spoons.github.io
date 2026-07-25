@@ -1,1 +1,0 @@
-This is a blog site built with Jekyll and Ruby.

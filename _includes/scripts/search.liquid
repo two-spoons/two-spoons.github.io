@@ -1,5 +1,5 @@
 {% if site.search_enabled %}
-  <script type="module" src="{{ '/assets/js/search/ninja-keys.min.js' | relative_url | bust_file_cache }}"></script>
+  <script type="module" src="{{ site.third_party_libraries.ninja_keys.url.js }}"></script>
   <ninja-keys hideBreadcrumbs noAutoLoadMdIcons placeholder="Type to start searching"></ninja-keys>
   <script>
     let searchTheme = determineComputedTheme();
@@ -575,5 +575,5 @@
       {%- endif -%}
     ];
   </script>
-  <script src="{{ '/assets/js/shortcut-key.js' | relative_url | bust_file_cache }}"></script>
+  <script src="{{ '/assets/js/shortcut-key.js' | relative_url }}"></script>
 {% endif %}

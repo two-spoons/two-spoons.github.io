@@ -1,0 +1,191 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Turns anything dropped in inbox/ into a properly named, front-mattered
+# post in _posts/.
+#
+#   inbox/some thoughts on dune.txt  ->  _posts/2026-07-25-some-thoughts-on-dune.md
+#
+# Rules:
+#   * The title is the first `# heading`, else the first non-empty line if it
+#     looks like a title (short, no trailing period), else the filename.
+#   * The date is the file's git-added time, or now if git doesn't know it.
+#     An explicit `date:` in existing front matter always wins.
+#   * A file that already has front matter keeps it; only missing keys are
+#     filled in. Nothing you wrote by hand is overwritten.
+#   * The category defaults to `writing`. Put the file in inbox/coding/ (or
+#     any subfolder) to use that folder name as the category instead.
+#
+# Run with --check to validate without writing anything (used by CI).
+
+require "date"
+require "fileutils"
+require "shellwords"
+require "yaml"
+
+ROOT     = File.expand_path("..", __dir__)
+INBOX    = File.join(ROOT, "inbox")
+POSTS    = File.join(ROOT, "_posts")
+CHECK    = ARGV.include?("--check")
+DEFAULT_CATEGORY = "writing"
+TEXT_EXTENSIONS  = %w[.md .markdown .txt].freeze
+
+# Words we don't want in a slug.
+STOP_PREFIX = /\A(a|an|the)\s+/i
+
+def slugify(str)
+  str.downcase
+     .gsub(/['’`]/, "")            # don't turn "you're" into "you-re"
+     .gsub(/[^a-z0-9]+/, "-")
+     .gsub(/\A-+|-+\z/, "")
+     .slice(0, 80)
+     .sub(/-+\z/, "")
+end
+
+# When was this file first committed? Falls back to file mtime, then now.
+def discover_date(path)
+  iso = `git -C #{ROOT.shellescape} log --diff-filter=A --format=%aI -1 -- #{path.shellescape} 2>/dev/null`.strip
+  return DateTime.parse(iso) unless iso.empty?
+
+  DateTime.parse(File.mtime(path).to_s)
+rescue ArgumentError
+  DateTime.now
+end
+
+def split_front_matter(text)
+  if text.start_with?("---\n")
+    parts = text.split(/^---\s*$\n/, 3)
+    if parts.length == 3
+      begin
+        return [YAML.safe_load(parts[1], permitted_classes: [Date, Time]) || {}, parts[2].lstrip]
+      rescue Psych::SyntaxError
+        # Malformed front matter: treat the whole thing as body.
+      end
+    end
+  end
+  [{}, text]
+end
+
+def derive_title(body, fallback)
+  heading = body[/^\#{1,3}\s+(.+)$/, 1]
+  return heading.strip if heading
+
+  first = body.lines.find { |l| !l.strip.empty? }
+  if first
+    candidate = first.strip
+    return candidate if candidate.length <= 90 && !candidate.end_with?(".", "!", "?")
+  end
+
+  fallback
+end
+
+# Remove the line we promoted into the title, so it isn't rendered twice —
+# whether it was a `# heading` or just the first line of a plain text dump.
+def strip_leading_title(body, title)
+  lines = body.lines
+  idx = lines.index { |l| !l.strip.empty? }
+  return body unless idx
+
+  first = lines[idx].strip
+  return body unless first.sub(/^\#{1,3}\s+/, "").strip == title
+
+  lines[(idx + 1)..].join.lstrip
+end
+
+errors = []
+created = []
+
+inbox_files = Dir.glob(File.join(INBOX, "**", "*")).select do |f|
+  File.file?(f) && !File.basename(f).start_with?(".") && File.basename(f) != "README.md"
+end
+
+inbox_files.each do |path|
+  rel = path.delete_prefix("#{INBOX}/")
+
+  unless TEXT_EXTENSIONS.include?(File.extname(path).downcase)
+    errors << "#{rel}: not a text file (expected #{TEXT_EXTENSIONS.join(', ')})"
+    next
+  end
+
+  raw = File.read(path, encoding: "UTF-8")
+  front, body = split_front_matter(raw)
+
+  if body.strip.empty? && front["title"].to_s.empty?
+    errors << "#{rel}: file is empty"
+    next
+  end
+
+  filename_title = File.basename(path, ".*").sub(/\A\d{4}-\d{2}-\d{2}[-\s]*/, "").tr("_", " ")
+  title = front["title"] || derive_title(body, filename_title)
+  body  = strip_leading_title(body, title) unless front["title"]
+
+  date =
+    if front["date"]
+      DateTime.parse(front["date"].to_s)
+    else
+      # A date in the filename takes precedence over the commit time.
+      stamp = File.basename(path)[/\A(\d{4}-\d{2}-\d{2})/, 1]
+      stamp ? DateTime.parse(stamp) : discover_date(path)
+    end
+
+  subdir = File.dirname(rel)
+  category = front["categories"] || front["category"] ||
+             (subdir == "." ? DEFAULT_CATEGORY : subdir.split("/").first)
+  categories = Array(category)
+
+  slug = slugify(title.sub(STOP_PREFIX, ""))
+  slug = slugify(filename_title) if slug.empty?
+  slug = "post" if slug.empty?
+
+  merged = {
+    "layout" => front["layout"] || "post",
+    "title" => title,
+    "date" => date.strftime("%Y-%m-%d %H:%M:%S %z"),
+    "categories" => categories,
+    "author" => front["author"] || "two_spoons",
+  }
+  # Anything else the author wrote by hand survives untouched.
+  front.each { |k, v| merged[k] = v unless merged.key?(k) }
+
+  target = File.join(POSTS, "#{date.strftime('%Y-%m-%d')}-#{slug}.md")
+
+  if File.exist?(target)
+    errors << "#{rel}: #{File.basename(target)} already exists"
+    next
+  end
+
+  if CHECK
+    puts "would create _posts/#{File.basename(target)}"
+    created << target
+    next
+  end
+
+  File.write(target, "#{YAML.dump(merged)}---\n\n#{body.strip}\n")
+  FileUtils.rm(path)
+  puts "created _posts/#{File.basename(target)} from inbox/#{rel}"
+  created << target
+end
+
+# Prune any directories the inbox files left behind.
+unless CHECK
+  Dir.glob(File.join(INBOX, "**/")).sort.reverse_each do |dir|
+    Dir.rmdir(dir) if Dir.empty?(dir) && dir != "#{INBOX}/"
+  end
+end
+
+# A post that Jekyll would silently ignore is worse than a loud failure.
+Dir.glob(File.join(POSTS, "*")).each do |post|
+  name = File.basename(post)
+  next if name =~ /\A\d{4}-\d{2}-\d{2}-[^\s]+\.(md|markdown|html)\z/
+
+  errors << "_posts/#{name}: bad filename — Jekyll will skip this file silently. " \
+            "Use YYYY-MM-DD-slug.md with no spaces."
+end
+
+unless errors.empty?
+  warn "\n#{errors.length} problem(s):"
+  errors.each { |e| warn "  - #{e}" }
+  exit 1
+end
+
+puts created.empty? ? "nothing to publish" : "\n#{created.length} post(s) ready"

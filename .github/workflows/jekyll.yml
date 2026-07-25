@@ -2,60 +2,19 @@ name: Build and Deploy Jekyll
 
 on:
   push:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    branches: [master, main]
+    paths-ignore:
+      - "inbox/**"
+      - "README.md"
   pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    branches: [master, main]
+    paths-ignore:
+      - "inbox/**"
+      - "README.md"
   workflow_dispatch:
+  # Called by publish-inbox.yml: a push made by the bot cannot trigger a
+  # workflow on its own, so the inbox job invokes this one directly.
+  workflow_call:
 
 permissions:
   contents: read
@@ -82,11 +41,15 @@ jobs:
           ruby-version: "3.2.2"
           bundler-cache: true
 
+      - name: Validate posts
+        # Fails loudly on a post filename Jekyll would otherwise skip in silence.
+        run: ruby bin/publish-inbox --check
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Update _config.yml ⚙️
+      - name: Point giscus at this repo ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
@@ -96,16 +59,10 @@ jobs:
 
       - name: Build with Jekyll
         run: |
-          pip3 install --upgrade jupyter
           export JEKYLL_ENV=production
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Purge unused CSS 🧹
-        run: |
-          npm install purgecss
-          npx purgecss -c purgecss.config.js
 
       - name: Upload artifact
         if: github.event_name != 'pull_request'

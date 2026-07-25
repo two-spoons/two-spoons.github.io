@@ -1,116 +1,87 @@
-# fold in space
-
-<div align="left">
-<br>
-casting
-<br><br>
-coding
-<br><br>
-selling out
-
 # two_spoons
 
-A blog
+The blog at [twospoons.online](https://twospoons.online). Jekyll, built and
+deployed by GitHub Actions on every push to `master`.
 
-## Features
+## Writing a post
 
-## Development
-
-### Prerequisites
-
-- Ruby 3.1+
-- Bundler
-
-### Local Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/TwoBloodySpoons/two_spoons_online.git
-   cd two_spoons_online
-   ```
-
-2. Install dependencies:
-   ```bash
-   bundle install
-   ```
-
-3. Start the development server:
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-4. Visit https://127.0.0.1:4000
-
-### Adding Content
-
-#### New Posts
-
-Create a new file in `_posts/` with the format:
-```
-YYYY-MM-DD-title.md
-```
-
-Example front matter:
-```yaml
----
-layout: post
-title: "your post title"
-date: 2024-01-01 12:00:00 +0000
-categories: [writing] # or [casting] or [coding]
-author: your_name
----
-
-Your content here...
-```
-
-#### Categories
-
-Posts are automatically categorized based on the `categories` field in the front matter:
-- `[writing]` 
-- `[casting]` 
-- `[coding]`
-## Deployment
-
-### GitHub Pages
-
-The site automatically deploys to GitHub Pages when you push to the main branch. The Jekyll build process is handled by GitHub Actions.
-
-### Manual Deployment
-
-1. Build the site:
-   ```bash
-   bundle exec jekyll build
-   ```
-
-2. The generated site will be in `_site/`
-
-## Project Structure
+Drop a `.md` or `.txt` file into `inbox/` and push. That's it.
 
 ```
-├── _layouts/              # Jekyll layouts
-├── _includes/             # Reusable Jekyll components
-├── _posts/               # Blog posts
-├── assets/css/           # Stylesheets
-├── .github/workflows/    # GitHub Actions
-├── _config.yml          # Jekyll configuration
-├── Gemfile              # Ruby dependencies
-└── index.html          # Homepage
+inbox/some thoughts on dune.txt
+      │
+      ▼  Publish inbox workflow
+_posts/2026-07-25-some-thoughts-on-dune.md   →   /blog/2026/some-thoughts-on-dune/
 ```
 
-## Customization
+The workflow timestamps it, gives it a slug, adds the front matter, moves it to
+`_posts/`, deletes it from `inbox/`, and redeploys the site. Posts sort
+themselves by date. You can do this from GitHub's web UI on your phone —
+**Add file → Create new file**, name it, paste, commit.
 
-### Styling
+What gets inferred:
 
-The Dracula theme styles are defined in `assets/css/main.scss`. The site uses:
-- CSS custom properties for colors
-- Input Mono font for all text
-- Lowercase text transformation
-- Bootstrap for responsive layout
+| | |
+|---|---|
+| **Title** | the first `# heading`; else the first line if it reads like a title; else the filename |
+| **Date** | the time you committed the file. Prefix the filename with `2026-07-25-` to set it yourself |
+| **Category** | `writing`. Drop the file in `inbox/coding/` to file it under `coding` instead |
+| **Author** | `two_spoons` |
 
-### Configuration
+Write your own front matter if you want control — it's preserved, and only the
+missing keys are filled in.
 
-Site settings can be modified in `_config.yml`:
+### From the terminal
 
-## Contributing
+```bash
+bin/new-post "on the difficulty of naming things"   # creates the file in _posts/
+bin/new-post "a bug i found" coding                 # ...under a category
+pbpaste | bin/new-post                              # ...from the clipboard
+bin/publish-inbox                                   # process inbox/ locally
+bin/publish-inbox --check                           # validate, change nothing
+```
 
-## License
+`--check` also runs in CI before every build, so a post Jekyll would silently
+skip (a filename with spaces, say) fails the build instead of quietly
+disappearing.
+
+## Running it locally
+
+Needs Ruby 3.1+ and ImageMagick.
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
+
+Then http://127.0.0.1:4000.
+
+## Layout of the repo
+
+```
+_posts/          published posts, YYYY-MM-DD-slug.md
+inbox/           drop zone — anything here becomes a post
+_pages/          about (/), writing, casting, coding, 404
+_layouts/        about, page, post, default, archive-{year,tag,category}
+_includes/       head, header, footer, social, metadata, figure, pagination,
+                 related_posts, giscus, scripts/
+_sass/           Dracula theme lives in _base.scss / _themes.scss
+assets/css/      main.scss (site styles), highlight-{light,dark}.css
+bin/             new-post, publish-inbox
+.github/workflows/
+  jekyll.yml         build + deploy to Pages
+  publish-inbox.yml  inbox → _posts, then calls jekyll.yml
+```
+
+## URLs
+
+Posts live at `/blog/:year/:slug/`. jekyll-archives generates `/blog/:year/`,
+`/blog/tag/:name/` and `/blog/category/:name/` to match — if you change
+`permalink` in `_config.yml`, change those together, or the tag and category
+links on each post stop resolving.
+
+## Styling
+
+Dracula palette, Anonymous Pro, lowercase everything. Colours are CSS custom
+properties at the top of `assets/css/main.scss`; layout and components are in
+`_sass/_base.scss`.

@@ -26,23 +26,31 @@ pagination:
   </div>
 {% endif %}
 
-{% if site.display_tags or site.display_categories %}
+{% comment %}
+  Tags and categories are derived from the posts themselves, so a new
+  category on a new post shows up here with no config change — and a
+  category with no posts can never render a dead link.
+{% endcomment %}
+{% assign all_tags = site.tags | sort %}
+{% assign all_categories = site.categories | sort %}
+
+{% if all_tags.size > 0 or all_categories.size > 0 %}
   <div class="tag-category-list">
     <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
+      {% for tag in all_tags %}
         <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
+          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag[0] | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag[0] }}</a>
         </li>
         {% unless forloop.last %}
           <p>&bull;</p>
         {% endunless %}
       {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
+      {% if all_categories.size > 0 and all_tags.size > 0 %}
         <p>&bull;</p>
       {% endif %}
-      {% for category in site.display_categories %}
+      {% for category in all_categories %}
         <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
+          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category[0] | slugify | prepend: '/blog/category/' | relative_url }}">{{ category[0] }}</a>
         </li>
         {% unless forloop.last %}
           <p>&bull;</p>

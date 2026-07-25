@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Creates a correctly named, front-mattered post and prints its path.
+#
+#   bin/new-post "on the difficulty of naming things"
+#   bin/new-post "a bug i found" coding
+#
+# With no arguments it reads the post body from stdin:
+#
+#   pbpaste | bin/new-post
+#   bin/new-post < notes.txt
+
+require "date"
+
+ROOT = File.expand_path("..", __dir__)
+
+def slugify(str)
+  str.downcase.gsub(/['’`]/, "").gsub(/[^a-z0-9]+/, "-").gsub(/\A-+|-+\z/, "").slice(0, 80).sub(/-+\z/, "")
+end
+
+title = ARGV[0]
+category = ARGV[1] || "writing"
+body = ""
+
+if title.nil?
+  body = $stdin.tty? ? "" : $stdin.read
+  title = body[/^\#{1,3}\s+(.+)$/, 1] || body.lines.find { |l| !l.strip.empty? }&.strip
+  abort "usage: bin/new-post \"title\" [category]   (or pipe text in on stdin)" if title.nil? || title.empty?
+  body = body.sub(/^\#{1,3}\s+#{Regexp.escape(title)}\s*$/, "").lstrip
+end
+
+now = DateTime.now
+slug = slugify(title.sub(/\A(a|an|the)\s+/i, ""))
+slug = "post" if slug.empty?
+path = File.join(ROOT, "_posts", "#{now.strftime('%Y-%m-%d')}-#{slug}.md")
+
+abort "#{path} already exists" if File.exist?(path)
+
+File.write(path, <<~POST)
+  ---
+  layout: post
+  title: "#{title.gsub('"', '\"')}"
+  date: #{now.strftime('%Y-%m-%d %H:%M:%S %z')}
+  categories: [#{category}]
+  author: two_spoons
+  ---
+
+  #{body.strip}
+POST
+
+puts path
