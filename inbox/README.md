@@ -18,4 +18,7 @@ missing pieces get filled in.
 To do it locally instead: `bin/new-post "a title"` creates the file in `_posts/`
 directly, or `bin/publish-inbox` processes this folder on your machine.
 
+Full details, including how to override any of the above and what to do when a
+push fails: [PUBLISHING.md](../PUBLISHING.md).
+
 (This README is ignored by the publisher.)

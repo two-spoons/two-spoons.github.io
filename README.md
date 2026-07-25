@@ -6,6 +6,8 @@ deployed by GitHub Actions on every push to `master`.
 ## Writing a post
 
 Drop a `.md` or `.txt` file into `inbox/` and push. That's it.
+[PUBLISHING.md](PUBLISHING.md) covers the whole workflow — the rules, the
+reasoning, and what to do when something breaks.
 
 ```
 inbox/some thoughts on dune.txt

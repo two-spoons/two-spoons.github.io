@@ -178,6 +178,7 @@ exclude:
   - Gemfile.lock
   - inbox/
   - LICENSE
+  - PUBLISHING.md
   - README.md
   - vendor
   - .sass-cache/
