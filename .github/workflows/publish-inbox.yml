@@ -21,6 +21,7 @@ jobs:
       contents: write
     outputs:
       published: ${{ steps.commit.outputs.published }}
+      sha: ${{ steps.commit.outputs.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -52,6 +53,8 @@ jobs:
           git commit -m "publish: ${names:-inbox}"
           git push
           echo "published=true" >> "$GITHUB_OUTPUT"
+          # The deploy must build this commit, not the one that started the run.
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   deploy:
     needs: publish
@@ -61,3 +64,5 @@ jobs:
       pages: write
       id-token: write
     uses: ./.github/workflows/jekyll.yml
+    with:
+      ref: ${{ needs.publish.outputs.sha }}

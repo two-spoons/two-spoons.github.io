@@ -15,6 +15,16 @@ on:
   # Called by publish-inbox.yml: a push made by the bot cannot trigger a
   # workflow on its own, so the inbox job invokes this one directly.
   workflow_call:
+    inputs:
+      ref:
+        description: >-
+          Commit to build. The inbox job passes the commit the bot just
+          pushed. Without it, checkout defaults to the SHA that started the
+          run — the state before the post was written — and the new post is
+          built out of existence.
+        type: string
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -34,6 +44,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          # Empty on a normal push, which checks out the triggering commit.
+          ref: ${{ inputs.ref }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
