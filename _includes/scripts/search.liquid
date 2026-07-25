@@ -1,5 +1,5 @@
 {% if site.search_enabled %}
-  <script type="module" src="{{ site.third_party_libraries.ninja_keys.url.js }}"></script>
+  <script type="module" src="{{ '/assets/js/search/ninja-keys.min.js' | relative_url }}"></script>
   <ninja-keys hideBreadcrumbs noAutoLoadMdIcons placeholder="Type to start searching"></ninja-keys>
   <script>
     let searchTheme = determineComputedTheme();

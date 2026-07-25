@@ -1,4 +1,11 @@
-<!-- Bootsrap & MDB scripts -->
+<!-- Bootstrap & MDB scripts -->
+<!-- MDB 4 expects Bootstrap's own JS (with Popper) to be loaded first: it
+     provides collapse, which the mobile navbar toggle depends on. -->
+<script
+  src="{{ site.third_party_libraries.bootstrap.url.js }}"
+  integrity="{{ site.third_party_libraries.bootstrap.integrity.js }}"
+  crossorigin="anonymous"
+></script>
 <script
   src="{{ site.third_party_libraries.mdb.url.js }}"
   integrity="{{ site.third_party_libraries.mdb.integrity.js }}"
