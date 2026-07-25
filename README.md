@@ -84,6 +84,14 @@ links on each post stop resolving.
 
 ## Styling
 
-Dracula palette, Anonymous Pro, lowercase everything. Colours are CSS custom
-properties at the top of `assets/css/main.scss`; layout and components are in
-`_sass/_base.scss`.
+Dracula palette, lowercase everything. Colours and the site-wide font stack are
+CSS custom properties at the top of `assets/css/main.scss`; layout and
+components are in `_sass/_base.scss`.
+
+One stack, `--site-mono`, is used by every rule. It names `InputMono ExLight`
+explicitly rather than leaning on `font-weight: 300` against the `Input Mono`
+family — Input ships its weights as separate sub-families, and Chrome and
+Firefox disagreed about which one weight 300 meant (Light vs ExLight), so the
+same page rendered at noticeably different stroke weights in each. Input Mono is
+a licensed desktop font, so only machines with it installed use it; everyone
+else falls through to Anonymous Pro, which is served as a webfont.
